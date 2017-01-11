@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/add_joke"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Joke"/>
+
+    <Button
+        android:id="@+id/update_joke"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update Joke"/>
+
+    <Button
+        android:id="@+id/add_unique_key"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Joke with Unique Key"/>
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

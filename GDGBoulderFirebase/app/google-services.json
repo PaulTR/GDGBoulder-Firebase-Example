@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "196190395373",
+    "firebase_url": "https://gdgboulder-firebase.firebaseio.com",
+    "project_id": "gdgboulder-firebase",
+    "storage_bucket": "gdgboulder-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:196190395373:android:a143b16f497a6435",
+        "android_client_info": {
+          "package_name": "com.ptrprograms.gdgboulderfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "196190395373-r24sbja9q40khsglj5152fsb5v8ki0qq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ptrprograms.gdgboulderfirebase",
+            "certificate_hash": "F9DDF3EA733F18E47D878F37E2C980BBFABFADA5"
+          }
+        },
+        {
+          "client_id": "196190395373-unhii217b8r90qkk4898ul5tkju9spbc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQ5fk5hQ900q0T_wcFgGhlfK1T9EiI2Ws"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "196190395373-unhii217b8r90qkk4898ul5tkju9spbc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
