@@ -24,7 +24,6 @@
         <activity android:name=".FirebaseDatabaseActivity" />
         <activity android:name=".FirebaseUIDatabaseActivity" />
         <activity android:name=".FirebaseStorageActivity" />
-        <activity android:name=".FirebaseUIStorageActivity" />
         <activity android:name=".FirebaseAnalyticsActivity" />
         <activity android:name=".FirebaseRemoteConfigActivity" />
         <activity android:name=".FirebaseAppInvitesActivity" />

@@ -22,7 +22,6 @@ public class MainActivity extends ListActivity {
             "FirebaseUIDatabaseActivity",
             "FirebaseAuthenticationActivity",
             "FirebaseStorageActivity",
-            "FirebaseUIStorageActivity",
             "FirebaseAnalyticsActivity",
             "FirebaseRemoteConfigActivity",
             "FirebaseAppInvitesActivity"
