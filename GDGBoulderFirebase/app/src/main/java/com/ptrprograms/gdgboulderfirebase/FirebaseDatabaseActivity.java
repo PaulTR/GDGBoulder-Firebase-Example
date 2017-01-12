@@ -141,7 +141,7 @@ public class FirebaseDatabaseActivity extends Activity {
     public void updateJoke(View v) {
         DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReferenceFromUrl(URL);
 
-        Joke joke = new Joke("Did you hear about the zoo with only one animal?", "It was a shi-tzu");
+        Joke joke = new Joke("Did you hear about the zoo with only one animal?", "It was a shih-tzu");
         Map<String, Object> childUpdates = new HashMap<>();
         childUpdates.put("/2", joke.toMap());
         databaseRef.updateChildren(childUpdates);
@@ -149,7 +149,7 @@ public class FirebaseDatabaseActivity extends Activity {
 
     public void addUniqueKeyJoke(View v) {
         DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReferenceFromUrl(URL);
-        Joke joke = new Joke("Did you hear about the zoo with only one animal?", "It was a shi-tzu");
+        Joke joke = new Joke("Did you hear about the zoo with only one animal?", "It was a shih-tzu");
 
         String key = databaseRef.push().getKey();
         databaseRef.child(key).setValue(joke);
