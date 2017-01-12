@@ -7,19 +7,22 @@
         android:id="@+id/add_joke"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Joke"/>
+        android:text="Add Joke"
+        android:onClick="addJoke"/>
 
     <Button
         android:id="@+id/update_joke"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Update Joke"/>
+        android:text="Update Joke"
+        android:onClick="updateJoke"/>
 
     <Button
         android:id="@+id/add_unique_key"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Joke with Unique Key"/>
+        android:text="Add Joke with Unique Key"
+        android:onClick="addUniqueKeyJoke"/>
 
     <ListView
         android:id="@+id/list"

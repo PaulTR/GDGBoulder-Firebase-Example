@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 
 import com.google.firebase.database.ChildEventListener;
@@ -28,9 +27,6 @@ public class FirebaseDatabaseActivity extends Activity {
 
     private ListView listView;
     private ArrayAdapter<Joke> adapter;
-    private Button addJokeButton;
-    private Button updateJokeButton;
-    private Button addUniqueKeyJokeButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,52 +34,10 @@ public class FirebaseDatabaseActivity extends Activity {
         setContentView(R.layout.activity_firebase_database);
 
         listView = (ListView) findViewById(R.id.list);
-        addJokeButton = (Button) findViewById(R.id.add_joke);
-        updateJokeButton = (Button) findViewById(R.id.update_joke);
-        addUniqueKeyJokeButton = (Button) findViewById(R.id.add_unique_key);
-
-        addJokeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Joke joke = new Joke();
-                joke.setQuestion("What do you use to fix a broken tuba?");
-                joke.setAnswer("a tuba glue!");
-
-                DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReferenceFromUrl(URL);
-                databaseRef.child("99").setValue(joke);
-
-            }
-        });
-
-        updateJokeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReferenceFromUrl(URL);
-
-                Joke joke = new Joke("Did you hear about the zoo with only one animal?", "It was a shi-tzu");
-                Map<String, Object> childUpdates = new HashMap<>();
-                childUpdates.put("/2", joke.toMap());
-                databaseRef.updateChildren(childUpdates);
-            }
-        });
-
-        addUniqueKeyJokeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReferenceFromUrl(URL);
-                Joke joke = new Joke("Did you hear about the zoo with only one animal?", "It was a shi-tzu");
-
-                String key = databaseRef.push().getKey();
-                databaseRef.child(key).setValue(joke);
-            }
-        });
-
-        updateJokeButton = (Button) findViewById(R.id.update_joke);
-
         adapter = new JokeListAdapter(this);
         listView.setAdapter(adapter);
 
+        //Use one or the other to test functionality between the two types of listeners
         loadDataThroughValueEventListener();
         //loadDataThroughChildEventListener();
 
@@ -148,24 +102,56 @@ public class FirebaseDatabaseActivity extends Activity {
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
                 for( DataSnapshot snapshot : dataSnapshot.getChildren() ) {
-                    Log.e("Example", snapshot.getValue().toString());
+                    Log.d("Firebase Database", snapshot.getValue().toString());
                 }
                 adapter.notifyDataSetChanged();
             }
 
             @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {}
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                Log.d("Firebase Database", "onChildChanged");
+            }
 
             @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {}
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+                Log.d("Firebase Database", "onChildRemoved");
+            }
 
             @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {}
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+                Log.d("Firebase Database", "onChildMoved");
+            }
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {}
+            public void onCancelled(DatabaseError databaseError) {
+                Log.d("Firebase Database", "onCancelled");
+            }
         });
+    }
 
+    public void addJoke(View v) {
+        Joke joke = new Joke();
+        joke.setQuestion("What do you use to fix a broken tuba?");
+        joke.setAnswer("a tuba glue!");
 
+        DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReferenceFromUrl(URL);
+        databaseRef.child("99").setValue(joke);
+    }
+
+    public void updateJoke(View v) {
+        DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReferenceFromUrl(URL);
+
+        Joke joke = new Joke("Did you hear about the zoo with only one animal?", "It was a shi-tzu");
+        Map<String, Object> childUpdates = new HashMap<>();
+        childUpdates.put("/2", joke.toMap());
+        databaseRef.updateChildren(childUpdates);
+    }
+
+    public void addUniqueKeyJoke(View v) {
+        DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReferenceFromUrl(URL);
+        Joke joke = new Joke("Did you hear about the zoo with only one animal?", "It was a shi-tzu");
+
+        String key = databaseRef.push().getKey();
+        databaseRef.child(key).setValue(joke);
     }
 }

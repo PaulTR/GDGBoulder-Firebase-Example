@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ptrprograms.gdgboulderfirebase">
 
+    <!-- Required for analytics -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,6 +25,15 @@
         <activity android:name=".FirebaseUIDatabaseActivity" />
         <activity android:name=".FirebaseStorageActivity" />
         <activity android:name=".FirebaseUIStorageActivity" />
+        <activity android:name=".FirebaseAnalyticsActivity" />
+
+        <service
+            android:name=".FirebaseNotificationService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
 
     </application>
 

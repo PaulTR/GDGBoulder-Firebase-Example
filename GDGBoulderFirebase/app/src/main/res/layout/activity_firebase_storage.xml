@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_download_bytes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Download as Byte Array"
+            android:onClick="downloadBytes"/>
+
+        <Button
+            android:id="@+id/btn_download_file"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Download File"
+            android:onClick="downloadFile"/>
+
+        <Button
+            android:id="@+id/btn_get_file_url"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Get File URL"
+            android:onClick="getFileUrl"/>
+
+        <Button
+            android:id="@+id/btn_upload_bytes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload Bytes"
+            android:onClick="uploadBytes"/>
+
+        <Button
+            android:id="@+id/btn_upload_file"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload File"
+            android:onClick="uploadFile"/>
+
+        <Button
+            android:id="@+id/btn_upload_stream"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload Stream"
+            android:onClick="uploadStream"/>
+
+        <Button
+            android:id="@+id/btn_pause_resume_upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pause/Resume upload"
+            android:onClick="pauseResumeUpload"/>
+
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete File"
+            android:onClick="deleteFile"/>
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@mipmap/ic_launcher"/>
+    </LinearLayout>
+</ScrollView>

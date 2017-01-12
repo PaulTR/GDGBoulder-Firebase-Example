@@ -14,7 +14,9 @@ public class MainActivity extends ListActivity {
             "FirebaseUIDatabaseActivity",
             "FirebaseAuthenticationActivity",
             "FirebaseStorageActivity",
-            "FirebaseUIStorageActivity" };
+            "FirebaseUIStorageActivity",
+            "FirebaseAnalyticsActivity"
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
