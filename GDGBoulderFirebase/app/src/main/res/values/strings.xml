@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">GDGBoulderFirebase</string>
+
+    <string name="invitation_custom_image">https://pbs.twimg.com/profile_images/2975888802/2a893e7d8bdf9500c3a676ed4ea236ab_400x400.png</string>
 </resources>
